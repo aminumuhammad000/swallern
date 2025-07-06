@@ -1,0 +1,26 @@
+:root {
+  /* Primary Brand Colors */
+  --color-primary: #ED673B; 
+  --color-primary-dark: #C7502C;
+
+  /* Secondary / Accent Colors */
+  --color-accent: #4A2F27;
+  --color-accent-light: #795548;
+
+  /* Support Colors */
+  --color-bg-light: #FFF5F2;
+  --color-bg-dark: #1A1A1A;
+
+  /* Text Colors */
+  --color-text-dark: #222222;
+  --color-text-light: #FAFAFA;
+
+  /* Status or Special Use */
+  --color-success: #4CAF50;
+  --color-error: #F44336;
+  --color-warning: #FFC107;
+}
+
+body{
+    
+}
