@@ -1,4 +1,139 @@
 .Hero{
+    display: flex;
+    justify-content: space-between;
     padding: 0px 50px 0px 50px;
     margin-top: 120px;
+}
+.title{
+    font-size: 54px;
+    width: 614px;
+}
+.color{
+    color: var(--color-primary);
+}
+.description{
+    font-size: 14px;
+    width: 520px;
+    margin-top: 20px;
+}
+.buttons{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+.primary{
+    width: 200px;
+    height: 60px;
+    background-color: var(--color-primary);
+    color: var(--color-bg-light);
+    border-radius: 10px;
+}
+.secondary{
+    width: 150px;
+    height: 60px;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 10px;
+}
+.testimonials{
+    display: flex;
+    justify-content: baseline;
+    gap: 20px;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+.add{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -50px;
+    margin-top: -5px;
+}
+.starContainer{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+.reviewText{
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+.circleContainer{
+    position: relative;
+}
+.imagesContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.userImage{
+    object-fit: cover;
+    /* background-color: var(--color-primary); */
+    padding: 5px;
+    margin-left: -70px;
+}
+.circle{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    border: 10px solid var(--color-bg-light);
+    outline: 3px solid var(--color-primary);
+    z-index: -1;
+}
+.image{
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    z-index: 10;
+}
+.courseBox{
+    position: absolute;
+    top: 140px;
+    right: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    width: 200px;
+    height: 70px;
+    border-radius: 15px;
+    background-color: #f5eeeec7;
+    color: var(--color-text-dark);
+}
+.courseNumber{
+    color: var(--color-primary);
+}
+.courseCard{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    width: 340px;
+    height: 150px;
+    border-radius: 15px;
+    background-color:  #f5eeeec7;
+    color: var(--color-primary);
+    top: 300px;
+    left: -250px;
+}
+.join{
+    background-color: var(--color-primary);
+    color: var(--color-bg-light);
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
 }
