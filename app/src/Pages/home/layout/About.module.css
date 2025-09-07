@@ -1,0 +1,144 @@
+.About{
+    width: 100%;
+    padding: 80px 0px 80px 0px;
+}
+.pageTitle{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 170px;
+    height: 43px;
+    background-color: var(--color-bg-light);
+    border-radius: 15px;
+    box-shadow: 2px 0px 2px #ddd;
+}
+.descriptionContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.textTitle{
+    /* content: ""; */
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
+.headingTitle{
+    font-size: 54px;
+    width: 427px;
+    margin-top: 30px;
+    color: var(--color-dark);
+}
+.headingTitle span{
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+}
+.aboutDescription{
+    width: 540px;
+    margin-top: 30px;
+    color: var(--color-dark);
+}
+.missionContainer{
+    /* width: 100%; */
+    padding: 0px 50px 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.imageContainer{
+    width: 500px;
+}
+.iconContainer{
+    display: flex;
+    justify-content: baseline;
+    width: 22px;
+    height: 22px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    color: var(--color-bg-light);
+}
+.missionAndvisionContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.mission,
+.vision{
+    width: 220px;
+}
+.mission p,
+.vision p{
+    font-size: 14px;
+    color: var(--color-dark);
+    margin-top: 10px;
+}
+.missionTitle,
+.visiomTitle{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    gap: 6px;
+}
+.videoContianer{
+    position: relative;
+}
+.students{
+    width: 568px;
+    object-fit: cover;
+}
+.video{
+    position: absolute;
+    bottom: -30px; 
+    margin-left: -200px;
+    width: 306px;
+    height: 172px;
+    object-fit: cover;
+}
+.audienceContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 74px;
+    gap: 25px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 2px #ddd, -1px -1px 2px #dddd;
+    gap: 15px;
+    /* background-color: var(--color-bg-light); */
+}
+.icon{
+    color: var(--color-primary);
+}
+.audienceText{
+    font-size: 12px;
+    margin-top: 10px;
+}
+.audienceTitle{
+    font-weight: 600;
+    color: #000000;
+}
+.learnMoreContainer{
+    width: 100%;
+    padding: 50px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.learnMore{
+    width: 120px;
+    height: 40px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 15px;
+}

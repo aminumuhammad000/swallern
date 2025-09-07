@@ -2,6 +2,7 @@
   /* Primary Brand Colors */
   --color-primary: #ED673B; 
   --color-primary-dark: #C7502C;
+  --color-dark: #46464a;
 
   /* Secondary / Accent Colors */
   --color-accent: #4A2F27;
@@ -60,6 +61,7 @@ p,
 body {
  overflow-x: hidden;
   font-family: nunito, sans-serif;
+  color: var(--color-dark);
 }
 li{
   list-style: none;
