@@ -1,0 +1,88 @@
+.Team{
+    position: relative;
+    width: 100%;
+    margin-top: 150px;
+}
+.pageTitle{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 170px;
+    height: 43px;
+    background-color: var(--color-bg-light);
+    border-radius: 15px;
+    box-shadow: 2px 0px 2px #ddd;
+    margin-left: 50px;
+}
+.textTitle{
+    /* content: ""; */
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
+.decoration{
+    position: absolute;
+    content: "";
+    min-width: 1824px;
+    width: 100%;
+    margin-inline: auto;
+    height: 1121px;
+    border-top: 1px solid #ddd;
+    border-radius: 50%;
+    left: -100px;
+    z-index: -1;
+}
+.decoration2{
+    position: absolute;
+    content: "";
+    min-width: 1824px;
+    width: 100%;
+    margin-inline: auto;
+    height: 1121px;
+    border-top: 1px solid #ddd;
+    border-radius: 50%;
+    left: -100px;
+    margin-top: 10px;
+      z-index: -1;
+}
+.decoration3{
+    position: absolute;
+    content: "";
+    min-width: 1824px;
+    width: 100%;
+    margin-inline: auto;
+    height: 1121px;
+    border-top: 1px solid #ddd;
+    border-radius: 50%;
+    left: -100px;
+    margin-top: 20px;
+      z-index: -1;
+}
+
+.container{
+    margin-top: 100px;
+    padding: 50px;
+}
+.title,
+.description{
+    width: 440px;
+    text-align: center;
+}
+.description{
+    margin-top: 20px;
+}
+.teamContainer{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    width: 1190px;
+}
+.titleContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: auto;
+}
