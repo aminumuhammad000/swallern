@@ -10,7 +10,7 @@ import ComputerIcon from "@mui/icons-material/Computer";
 
 const About = () => {
   return (
-    <div className={styles.About}>
+    <div className={styles.About} id="about">
       <div className={styles.descriptionContainer}>
         <div>
           <div className={styles.pageTitle}>

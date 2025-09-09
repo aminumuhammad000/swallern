@@ -1,0 +1,40 @@
+// import React from 'react'
+import styles from "./Purpose.module.css";
+
+const Purpose = () => {
+  return (
+    <div className={styles.Purpose}>
+      <h2 className={styles.title}>What do you want to achieve?</h2>
+      <ul>
+        <li>
+          <span>Learn a tech skill</span>
+          <input type="checkbox" name="purpose" id="" />
+        </li>
+        <li>
+          <span>Career Growth</span>
+          <input type="checkbox" name="purpose" id="" />
+        </li>
+        <li>
+          <span>Personal Development</span>
+          <input type="checkbox" name="purpose" id="" />
+        </li>
+        <li>
+          <span>Academic Learning</span>
+          <input type="checkbox" name="purpose" id="" />
+        </li>
+        <li>
+          <span>Build a Project</span>
+          <input type="checkbox" name="purpose" id="" />
+        </li>
+        <li>
+          <span>Curiosity/Fun</span>
+          <input type="checkbox" name="purpose" id="" />
+        </li>
+      </ul>
+
+      <button className={styles.button}>Continue</button>
+    </div>
+  );
+};
+
+export default Purpose;

@@ -10,7 +10,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 
 export const Contact = () => {
   return (
-    <div className={styles.Contact}>
+    <div className={styles.Contact} id="contact">
       <div className={styles.pageTitle}>
         <div className={styles.textTitle}></div>
         About Us

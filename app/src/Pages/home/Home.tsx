@@ -7,6 +7,7 @@ import { Team } from "./layout/Team";
 import { Contact } from "./layout/Contact";
 import { FAQs } from "./layout/FAQs";
 import { NewsLetter } from "./layout/NewsLetter";
+import { Footer } from "./layout/Footer";
 export const Home = () => {
   return (
     <div className={style.Home}>
@@ -18,6 +19,7 @@ export const Home = () => {
       <Contact />
       <FAQs />
       <NewsLetter />
+      <Footer />
     </div>
   );
 };

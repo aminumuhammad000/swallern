@@ -78,7 +78,7 @@ export const FAQs = () => {
     setOpenId(openId === id ? null : id);
   };
   return (
-    <div className={styles.FAQs}>
+    <div className={styles.FAQs} id="faqs">
       <div className={styles.pageTitle}>
         <div className={styles.textTitle}></div>
         About Us
