@@ -1,6 +1,11 @@
 // import React from "react";
 import styles from "./Experience.module.css";
+import { useDispatch } from "react-redux";
+import { goToPage } from "../../../features/navigation/navigationSlice";
+import { type AppDispatch } from "../../../store/store";
+
 const Experience = () => {
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <div className={styles.Experience}>
       <h2 className={styles.title}>What’s your current experience?</h2>
@@ -19,7 +24,12 @@ const Experience = () => {
         </li>
       </ul>
 
-      <button className={styles.button}>Continue</button>
+      <button
+        className={styles.button}
+        onClick={() => dispatch(goToPage("register"))}
+      >
+        Continue
+      </button>
     </div>
   );
 };

@@ -1,11 +1,15 @@
 // import React from 'react'
 import styles from "./Purpose.module.css";
+import { useDispatch } from "react-redux";
+import { goToPage } from "../../../features/navigation/navigationSlice";
+import { type AppDispatch } from "../../../store/store";
 
 const Purpose = () => {
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <div className={styles.Purpose}>
       <h2 className={styles.title}>What do you want to achieve?</h2>
-      <ul>
+      <ul className={styles.navLink}>
         <li>
           <span>Learn a tech skill</span>
           <input type="checkbox" name="purpose" id="" />
@@ -32,7 +36,12 @@ const Purpose = () => {
         </li>
       </ul>
 
-      <button className={styles.button}>Continue</button>
+      <button
+        className={styles.button}
+        onClick={() => dispatch(goToPage("interest"))}
+      >
+        Continue
+      </button>
     </div>
   );
 };

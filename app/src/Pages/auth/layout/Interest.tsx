@@ -13,6 +13,9 @@ import {
   Token,
   SmartToy,
 } from "@mui/icons-material";
+import { useDispatch } from "react-redux";
+import { goToPage } from "../../../features/navigation/navigationSlice";
+import { type AppDispatch } from "../../../store/store";
 
 type Course = {
   title: string;
@@ -74,6 +77,7 @@ const courses: Course[] = [
 ];
 
 const Interest = () => {
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <div className={styles.Interest}>
       <h2 className={styles.title}>Pick Your Interests</h2>
@@ -106,7 +110,12 @@ const Interest = () => {
         })}
       </ul>
 
-      <button className={styles.button}>Continue</button>
+      <button
+        className={styles.button}
+        onClick={() => dispatch(goToPage("experience"))}
+      >
+        Continue
+      </button>
     </div>
   );
 };

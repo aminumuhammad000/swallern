@@ -1,7 +1,12 @@
 // import React from 'react'
 import styles from "./Welcome.module.css";
 import logo from "../../../assets/logo.png";
+import { useDispatch } from "react-redux";
+import { goToPage } from "../../../features/navigation/navigationSlice";
+import { type AppDispatch } from "../../../store/store";
+
 const Welcome = () => {
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <div className={styles.Welcome}>
       <img src={logo} alt="logo" className={styles.image} />
@@ -11,7 +16,12 @@ const Welcome = () => {
       <p className={styles.description}>
         Let’s get you ready to learn fast and grow wise.
       </p>
-      <button className={styles.button}>Let’s Begin</button>
+      <button
+        className={styles.button}
+        onClick={() => dispatch(goToPage("purpose"))}
+      >
+        Let’s Begin
+      </button>
     </div>
   );
 };

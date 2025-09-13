@@ -1,6 +1,11 @@
 // import React from 'react'
 import styles from "./Otp.module.css";
+import { useDispatch } from "react-redux";
+import { goToPage } from "../../../features/navigation/navigationSlice";
+import { type AppDispatch } from "../../../store/store";
+
 const OTP = () => {
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <div className={styles.Register}>
       <h3>Check your email</h3>
@@ -15,10 +20,14 @@ const OTP = () => {
           placeholder="enter otp here"
           required
         />
-        <button type="submit" className={styles.primary}>
+        <button
+          type="submit"
+          className={styles.primary}
+          onClick={() => dispatch(goToPage("otp"))}
+        >
           Verify Code
         </button>
-        <button className={styles.secondary}>Continue as Guest</button>
+        {/* <button className={styles.secondary}>Continue as Guest</button> */}
       </form>
     </div>
   );

@@ -1,12 +1,17 @@
 // import React from 'react'
 import styles from "./NewsLetter.module.css";
 import logo from "../../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 export const NewsLetter = () => {
   return (
     <div className={styles.NewsLetter}>
       <img src={logo} alt="logo" className={styles.logo} />
-      <button className={styles.getStarted}>Get Started with Swallern</button>
+      <button className={styles.getStarted}>
+        <Link to="/auth" id="link">
+          Get Started with Swallern
+        </Link>
+      </button>
 
       <div className={styles.container}>
         <div className={styles.update}>

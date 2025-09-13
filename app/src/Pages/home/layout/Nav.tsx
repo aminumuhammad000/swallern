@@ -3,7 +3,9 @@ import logo from "../../../assets/logo.png"; // Assuming you have a logo image i
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useState } from "react";
+
 export const Nav = () => {
+  // const [menu, setMenu] useState("")
   const [active, setActive] = useState("home");
   return (
     <div className={style.Nav} id="flexSpaceBetween">
@@ -16,7 +18,7 @@ export const Nav = () => {
           className={active === "home" && style.active}
           onClick={() => setActive("home")}
         >
-          <HashLink smooth to="/" id="link">
+          <HashLink smooth to="/" id="link" className="link">
             Home
           </HashLink>
         </li>
@@ -25,7 +27,7 @@ export const Nav = () => {
           className={active === "about" && style.active}
           onClick={() => setActive("about")}
         >
-          <HashLink smooth to="/#about" id="link">
+          <HashLink smooth to="/#about" id="link" className="link">
             About us
           </HashLink>
         </li>
@@ -34,7 +36,7 @@ export const Nav = () => {
           className={active === "contact" && style.active}
           onClick={() => setActive("contact")}
         >
-          <HashLink smooth to="/#contact" id="link">
+          <HashLink smooth to="/#contact" id="link" className="link">
             Contact us
           </HashLink>
         </li>
@@ -43,7 +45,7 @@ export const Nav = () => {
           className={active === "faqs" && style.active}
           onClick={() => setActive("faqs")}
         >
-          <HashLink to="/#faqs" id="link">
+          <HashLink to="/#faqs" id="link" className="link">
             FAQs
           </HashLink>
         </li>

@@ -1,6 +1,11 @@
 // import React from 'react'
 import styles from "./Forget.module.css";
+import { useDispatch } from "react-redux";
+import { goToPage } from "../../../features/navigation/navigationSlice";
+import { type AppDispatch } from "../../../store/store";
+
 const Forget = () => {
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <div className={styles.Register}>
       <h3>Reset your password</h3>
@@ -15,7 +20,11 @@ const Forget = () => {
           placeholder="email"
           required
         />
-        <button type="submit" className={styles.primary}>
+        <button
+          type="submit"
+          className={styles.primary}
+          onClick={() => dispatch(goToPage("otp"))}
+        >
           Send Reset Link
         </button>
       </form>

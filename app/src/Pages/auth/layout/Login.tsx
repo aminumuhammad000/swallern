@@ -1,7 +1,12 @@
 // import React from 'react'
 import styles from "./Register.module.css";
 import google from "../../../assets/icons/google.png";
+import { useDispatch } from "react-redux";
+import { goToPage } from "../../../features/navigation/navigationSlice";
+import { type AppDispatch } from "../../../store/store";
+
 const Login = () => {
+  const dispatch = useDispatch<AppDispatch>();
   return (
     <div className={styles.Register}>
       <h3>Welcome back</h3>
@@ -41,9 +46,18 @@ const Login = () => {
         </button>
       </form>
       <p className={styles.haveAccount}>
-        Don’t have an account?<span className={styles.login}> Sign up</span>
+        Don’t have an account?
+        <span
+          className={styles.login}
+          onClick={() => dispatch(goToPage("register"))}
+        >
+          {" "}
+          Sign up
+        </span>
       </p>
-      <p className={styles.forget}>Forgot Password?</p>
+      <p className={styles.forget} onClick={() => dispatch(goToPage("forget"))}>
+        Forgot Password?
+      </p>
     </div>
   );
 };
