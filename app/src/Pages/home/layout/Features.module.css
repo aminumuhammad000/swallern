@@ -1,18 +1,23 @@
-.Features{
+.Features {
     width: 100%;
     padding: 50px;
 }
-.container{
+
+.container {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    gap: 20px;
 }
-.featureContainer{
+
+/* Feature list */
+.featureContainer {
     max-width: 50%;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
-.card{
+
+.card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,33 +29,89 @@
     padding: 20px;
     text-align: center;
 }
-.title{
+
+.title {
     color: var(--color-bg-light);
     font-size: 16px;
     margin-top: 10px;
 }
-.description{
+
+.description {
     color: var(--color-bg-light);
     font-size: 14px;
     margin-top: 10px;
 }
-.imageContainer{
+
+/* Image side */
+.imageContainer {
     width: 50%;
 }
-.map{
+
+.map {
     width: 100%;
     object-fit: cover;
 }
-.btnConatiner{
+
+/* Button */
+.btnConatiner {
     display: flex;
     justify-content: end;
     width: 47%;
-    margin-top: 80px
+    margin-top: 80px;
 }
-.btn{
+
+.btn {
     width: 200px;
     height: 40px;
     border: 1px solid var(--color-primary);
     border-radius: 15px;
     color: var(--color-primary);
-}   
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 1024px) {
+    .featureContainer {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .imageContainer {
+        width: 100%;
+    }
+
+    .btnConatiner {
+        width: 100%;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .container {
+    flex-wrap: wrap;
+
+}
+}
+
+@media (max-width: 600px) {
+    .Features {
+        padding: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+        .container {
+    flex-wrap: wrap;
+
+}
+}

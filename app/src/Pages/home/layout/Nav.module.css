@@ -1,10 +1,14 @@
 .Nav{
+    width: 100%;
     padding: 25px 50px 0px 50px;
     height: 150px;
 }
 .logo{
     width: 80px;
     object-fit: cover;
+}
+.link{
+  text-decoration: none;
 }
 .navLinks{
     gap: 36px;
@@ -21,4 +25,82 @@ li.active{
     border-radius: 15px;
     border: 1px solid var(--color-primary);
     color: var(--color-primary);
+}
+
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 32px;
+  color: var(--color-primary);
+  z-index: 1100; /* stay above overlay */
+}
+
+/* Fullscreen Mobile Menu */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: coral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.mobileMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.mobileMenu li {
+  margin: 20px 0;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.getStartedMobile {
+  display: inline-block;
+  margin-top: 2rem;
+  background: white;
+  color: coral;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .Nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    padding: 0;
+    margin-top: -20px;
+}
+.navLinks li,
+  .navLinks,
+  .getStarted {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
 }

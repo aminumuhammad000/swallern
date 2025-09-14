@@ -81,7 +81,7 @@ export const FAQs = () => {
     <div className={styles.FAQs} id="faqs">
       <div className={styles.pageTitle}>
         <div className={styles.textTitle}></div>
-        About Us
+        FAQs
         <div className={styles.textTitle}></div>
       </div>
 

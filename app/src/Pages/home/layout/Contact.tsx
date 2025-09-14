@@ -13,7 +13,7 @@ export const Contact = () => {
     <div className={styles.Contact} id="contact">
       <div className={styles.pageTitle}>
         <div className={styles.textTitle}></div>
-        About Us
+        Contact Us
         <div className={styles.textTitle}></div>
       </div>
 

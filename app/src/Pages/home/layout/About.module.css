@@ -1,144 +1,258 @@
-.About{
+.About {
+  width: 100%;
+  padding: 180px 0px 80px 0px;
+}
+
+.pageTitle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 170px;
+  height: 43px;
+  background-color: var(--color-bg-light);
+  border-radius: 15px;
+  box-shadow: 2px 0px 2px #ddd;
+}
+
+.descriptionContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.textTitle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.headingTitle {
+  font-size: 54px;
+  width: 427px;
+  margin-top: 30px;
+  color: var(--color-dark);
+}
+
+.headingTitle span {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.aboutDescription {
+  width: 540px;
+  margin-top: 30px;
+  color: var(--color-dark);
+}
+
+.missionContainer {
+  padding: 0px 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.imageContainer {
+  width: 500px;
+}
+.imageContainer img{
     width: 100%;
-    padding: 180px 0px 80px 0px;
 }
-.pageTitle{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 170px;
-    height: 43px;
-    background-color: var(--color-bg-light);
-    border-radius: 15px;
-    box-shadow: 2px 0px 2px #ddd;
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  color: var(--color-bg-light);
 }
-.descriptionContainer{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+
+.missionAndvisionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
-.textTitle{
-    /* content: ""; */
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: var(--color-primary);
-}
-.headingTitle{
-    font-size: 54px;
-    width: 427px;
-    margin-top: 30px;
-    color: var(--color-dark);
-}
-.headingTitle span{
-    color: var(--color-primary);
-    border-bottom: 2px solid var(--color-primary);
-}
-.aboutDescription{
-    width: 540px;
-    margin-top: 30px;
-    color: var(--color-dark);
-}
-.missionContainer{
-    /* width: 100%; */
-    padding: 0px 50px 0px 50px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-.imageContainer{
-    width: 500px;
-}
-.iconContainer{
-    display: flex;
-    justify-content: baseline;
-    width: 22px;
-    height: 22px;
-    background-color: var(--color-primary);
-    border-radius: 50%;
-    color: var(--color-bg-light);
-}
-.missionAndvisionContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-}
+
 .mission,
-.vision{
-    width: 220px;
+.vision {
+  width: 220px;
 }
+
 .mission p,
-.vision p{
-    font-size: 14px;
-    color: var(--color-dark);
-    margin-top: 10px;
+.vision p {
+  font-size: 14px;
+  color: var(--color-dark);
+  margin-top: 10px;
 }
+
 .missionTitle,
-.visiomTitle{
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    gap: 6px;
+.visiomTitle {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  gap: 6px;
 }
-.videoContianer{
-    position: relative;
+
+.videoContianer {
+  position: relative;
 }
-.students{
-    width: 568px;
-    object-fit: cover;
+
+.students {
+  width: 568px;
+  max-width: 100%;
+  object-fit: cover;
 }
-.video{
-    position: absolute;
-    bottom: -30px; 
-    margin-left: -200px;
-    width: 306px;
-    height: 172px;
-    object-fit: cover;
+
+.video {
+  position: absolute;
+  bottom: -30px;
+  margin-left: -200px;
+  width: 306px;
+  height: 172px;
+  object-fit: cover;
 }
-.audienceContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 74px;
-    gap: 25px;
+
+.audienceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 74px;
+  gap: 25px;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    height: 100px;
-    padding: 10px;
-    border-radius: 30px;
-    box-shadow: 1px 1px 2px #ddd, -1px -1px 2px #dddd;
-    gap: 15px;
-    /* background-color: var(--color-bg-light); */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+  min-height: 100px;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 1px 1px 2px #ddd, -1px -1px 2px #dddd;
+  gap: 15px;
 }
-.icon{
-    color: var(--color-primary);
+
+.icon {
+  color: var(--color-primary);
 }
-.audienceText{
-    font-size: 12px;
-    margin-top: 10px;
+
+.audienceText {
+  font-size: 12px;
+  margin-top: 10px;
 }
-.audienceTitle{
-    font-weight: 600;
-    color: #000000;
+
+.audienceTitle {
+  font-weight: 600;
+  color: #000000;
 }
-.learnMoreContainer{
+
+.learnMoreContainer {
+  width: 100%;
+  padding: 50px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.learnMore {
+  width: 120px;
+  height: 40px;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 15px;
+}
+
+
+/* ====== Responsive ====== */
+@media (max-width: 1024px) {
+  .pageTitle {
+    margin-left: 10px;
+}
+  .headingTitle {
+    font-size: 40px;
     width: 100%;
-    padding: 50px;
-    margin-top: 30px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+    text-align: center;
+  }
+
+  .aboutDescription {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  .imageContainer {
+  width: 300px;
 }
-.learnMore{
-    width: 120px;
-    height: 40px;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
-    border-radius: 15px;
+  .missionContainer {
+    padding: 0 20px;
+    justify-content: center;
+  }
+
+  .imageContainer {
+    width: 100%;
+    text-align: center;
+  }
+
+  .students {
+    width: 100%;
+  }
+
+  .video {
+    position: static;
+    margin: 20px auto 0 auto;
+    display: block;
+  }
+
+  .learnMoreContainer {
+    justify-content: center;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .About {
+    padding: 100px 0 50px 0;
+  }
+
+  .headingTitle {
+    font-size: 28px;
+  }
+
+  .aboutDescription {
+    font-size: 14px;
+  }
+
+  .missionAndvisionContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mission,
+  .vision {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .container {
+    margin: 0px 10px;
+    border-radius: 10px;
+  }
+
+  .audienceText {
+    font-size: 14px;
+  }
 }
