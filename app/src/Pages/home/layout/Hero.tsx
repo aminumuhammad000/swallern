@@ -1,6 +1,8 @@
 import style from "./Hero.module.css";
 import user from "../../../assets/images/user.png";
-import user2 from "../../../assets/images/user2.png";
+import user2 from "../../../assets/images/user.png";
+import user3 from "../../../assets/images/profile.png"
+import aliyu from "../../../assets/images/aliyu.png"
 import StarIcon from "@mui/icons-material/Star";
 
 // import { use } from "react";
@@ -25,12 +27,12 @@ export const Hero = () => {
 
         <div className={style.testimonials}>
           <div className={style.imagesContainer}>
+            <img src={user3} alt="user profile" className={style.userImage} />
             <img src={user2} alt="user profile" className={style.userImage} />
-            <img src={user2} alt="user profile" className={style.userImage} />
-            <img src={user2} alt="user profile" className={style.userImage} />
-            <img src={user2} alt="user profile" className={style.userImage} />
-            <img src={user2} alt="user profile" className={style.userImage} />
-            <img src={user2} alt="user profile" className={style.userImage} />
+            <img src={aliyu} alt="user profile" className={style.userImage} />
+            <img src={user3} alt="user profile" className={style.userImage} />
+            <img src={aliyu} alt="user profile" className={style.userImage} />
+            <img src={user3} alt="user profile" className={style.userImage} />
             <button className={style.add}>+</button>
           </div>
           <div>

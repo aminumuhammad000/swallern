@@ -1,6 +1,7 @@
-// import React from 'react'
+import { useEffect, useState } from "react";
 import styles from "./Team.module.css";
 import profile from "../../../assets/images/profile.png";
+import aliyu from "../../../assets/images/aliyu.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -41,6 +42,17 @@ const team: TeamMember[] = [
     },
   },
   {
+    profileImage: aliyu,
+    name: "Aliyu Usman",
+    position: "Lead Developer",
+    bio: "Driving backend architecture, database design, and scalable solutions with innovation, precision, and leadership.",
+    social: {
+      facebook: "https://facebook.com/aliyu",
+      instagram: "https://www.instagram.com/itzhaydar2/",
+      twitter: "https://x.com/itzhaydar",
+    },
+  },
+  {
     profileImage: profile,
     name: "Abdullahtif Yusuf",
     position: "Marketing Specialist",
@@ -57,20 +69,9 @@ const team: TeamMember[] = [
     position: "Marketing Specialist / Frontend Developer",
     bio: "Blends creativity and code to craft engaging experiences. Skilled in both outreach and design-focused frontend development.",
     social: {
-      facebook: "https://facebook.com/usman",
+      facebook: "https://web.facebook.com/aliyu.usmanabdullahi.5",
       instagram: "https://instagram.com/usman",
       twitter: "https://twitter.com/usman",
-    },
-  },
-  {
-    profileImage: profile,
-    name: "Aliyu Usman",
-    position: "Lead Developer",
-    bio: "Architect of scalable systems and technical solutions. Guides the dev team to build robust and reliable products.",
-    social: {
-      facebook: "https://facebook.com/aliyu",
-      instagram: "https://instagram.com/aliyu",
-      twitter: "https://twitter.com/aliyu",
     },
   },
   {
@@ -95,9 +96,32 @@ const team: TeamMember[] = [
       twitter: "https://twitter.com/ascap",
     },
   },
+  {
+    profileImage: profile,
+    name: "Mustapha Hussain",
+    position: "Ui/UX Designer",
+    bio: "Designs with empathy and clarity, turning vision into visual identity. Crafts user-friendly interfaces and strong brand presence.",
+    social: {
+      facebook: "https://facebook.com/ascap",
+      instagram: "https://instagram.com/ascap",
+      twitter: "https://twitter.com/ascap",
+    },
+  },
 ];
 
 export const Team = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto slide only on mobile
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.innerWidth <= 768) {
+        setCurrentIndex((prev) => (prev + 1) % team.length);
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className={styles.Team}>
       <div className={styles.pageTitle}>
@@ -105,21 +129,22 @@ export const Team = () => {
         Our Team
         <div className={styles.textTitle}></div>
       </div>
-      <div className={styles.decoration}></div>
-      <div className={styles.decoration2}></div>
-      <div className={styles.decoration3}></div>
+
       <div className={styles.container}>
         <div className={styles.titleContainer}>
           <h2 className={styles.title}>The Energy Behind Swallern</h2>
           <p className={styles.description}>
             Swallern is more than a platform it’s a movement. And behind that
             movement is a team of builders, creators, learners, and leaders who
-            believe in one thing
+            believe in one thing.
           </p>
         </div>
       </div>
 
-      <div className={styles.teamContainer}>
+      {/* ✅ Team Grid for Desktop / Slider for Mobile */}
+      <div
+        className={styles.teamContainer}
+      >
         {team.map((member, index) => (
           <div key={index} className={styles.memberCard}>
             <div className={styles.imageContainer}>
@@ -129,13 +154,10 @@ export const Team = () => {
                 className={styles.memberProfile}
               />
             </div>
-
             <h4 className={styles.name}>{member.name}</h4>
-
             <div className={styles.bioContainer}>
               <h5 className={styles.position}>{member.position}</h5>
               <p className={styles.bio}>{member.bio}</p>
-
               <div className={styles.socialMedia}>
                 <a href={member.social.facebook} className={styles.link}>
                   <FacebookIcon className={styles.icon} />

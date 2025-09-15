@@ -33,22 +33,22 @@ export const Contact = () => {
 
           <div className={styles.contactItem}>
             <EmailIcon className={styles.icon} />
-            <span>hello@swallern.com</span>
+            <span>swallern@gmail.com.com</span>
           </div>
 
           <div className={styles.contactItem}>
             <PhoneIcon className={styles.icon} />
-            <span>08100015498</span>
+            <span>+2348100015498</span>
           </div>
 
           <div className={styles.address}>
-            No. 14 Innovation Hub Road,
+            {/* No. 14 Innovation Hub Road,
             <br />
-            Abuja, Nigeria
+            Abuja, Nigeria */}
           </div>
 
           <div className={styles.socials}>
-            <FacebookIcon />
+            <a href="https://www.facebook.com/61552012307241/posts/1059828829023223/?substory_index=1059828829023223&mibextid=rS40aB7S9Ucbxw6v" target="blank" style={{textDecoration: "none", color: "white"}}><FacebookIcon /></a>
             <InstagramIcon />
             <TwitterIcon />
           </div>
@@ -60,11 +60,11 @@ export const Contact = () => {
             <div className={styles.row}>
               <div className={styles.inputGroup}>
                 <label>Full Name</label>
-                <input type="text" defaultValue="Aminu Muhammad" />
+                <input type="text" placeholder="Enter your name" />
               </div>
               <div className={styles.inputGroup}>
                 <label>Email</label>
-                <input type="email" defaultValue="aminu@gmail.com" />
+                <input type="email" placeholder="enter your email" />
               </div>
             </div>
 
@@ -72,13 +72,13 @@ export const Contact = () => {
               <label>Subject</label>
               <input
                 type="text"
-                defaultValue="i want partnership with swallern"
+                placeholder="write subject here"
               />
             </div>
 
             <div className={styles.inputGroup}>
               <label>Message</label>
-              <textarea defaultValue="lorem hello just a rando message to type here as demo later we will edit"></textarea>
+              <textarea placeholder="enter the message here"></textarea>
             </div>
 
             <button type="submit" className={styles.button}>
