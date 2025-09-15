@@ -71,7 +71,7 @@ export const Nav = () => {
 
       {/* Hamburger for mobile */}
       <div className={style.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <CloseIcon /> : <MenuIcon />}
+        {menuOpen ? <CloseIcon style={{color: "white"}}/> : <MenuIcon />}
       </div>
 
       {/* Fullscreen Mobile Menu */}
