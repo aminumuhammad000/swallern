@@ -6,6 +6,7 @@ import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 
+
 export const Nav = () => {
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
