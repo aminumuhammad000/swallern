@@ -35,6 +35,7 @@
     justify-content: center;
     gap: 12px;
 }
+.courseCard,
 .courses li{
     width: 100%;
     height: 100px;
@@ -70,4 +71,54 @@ input{
     background-color: var(--color-primary);
     border-radius: 15px;
     margin-top: 20px;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
+    .Interest {
+        padding: 20px 8px;
+        gap: 14px;
+        min-height: 100vh;
+    }
+    .titleContainer {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .description {
+        width: 95vw;
+        font-size: 13px;
+        padding: 0 5px;
+    }
+    .courses {
+        width: 95vw;
+        max-width: 400px;
+        gap: 10px;
+    }
+    .courses li {
+        padding: 4px 8px;
+        font-size: 15px;
+    }
+    .icon {
+        width: 28px;
+        height: 28px;
+    }
+    .courseTitle {
+        font-size: 16px;
+    }
+    .courseDescription {
+        font-size: 12px;
+        margin-top: 4px;
+    }
+    input {
+        width: 20px;
+        height: 20px;
+    }
+    .button {
+        width: 100%;
+        min-width: 120px;
+        max-width: 300px;
+        height: 36px;
+        font-size: 1rem;
+        margin-top: 14px;
+    }
 }

@@ -30,3 +30,33 @@
     border-radius: 15px;
     margin-top: 20px;
 }
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
+    .Welcome {
+        height: auto;
+        padding: 20px 10px;
+        gap: 16px;
+    }
+    .image {
+        width: 100px;
+        max-width: 80vw;
+    }
+    .title {
+        width: 90vw;
+        font-size: 1.2rem;
+        padding: 0 5px;
+    }
+    .description {
+        font-size: 13px;
+        margin-top: 8px;
+        padding: 0 5px;
+    }
+    .button {
+        width: 100%;
+        min-width: 120px;
+        max-width: 300px;
+        height: 44px;
+        font-size: 1rem;
+        margin-top: 16px;
+    }
+}

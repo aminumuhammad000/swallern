@@ -77,3 +77,49 @@
     color: #46464a;
     font-size: 14px;
 }
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
+    .Register {
+         min-height: 100vh;
+            padding: 24px 8px;
+    }
+    .form {
+        width: 95vw;
+        max-width: 400px;
+        gap: 16px;
+        margin-top: 12px;
+    }
+    .form input:not(input[type="checkbox"]) {
+        height: 44px;
+        font-size: 15px;
+        padding: 0px 8px;
+    }
+    .checkboxContainer p {
+        font-size: 13px;
+    }
+    .google {
+        width: 28px;
+    }
+    .primary, .secondary {
+        width: 100%;
+        min-width: 120px;
+        max-width: 300px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    .haveAccount {
+        font-size: 13px;
+        margin-top: 14px;
+        text-align: center;
+    }
+    .forget {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+    .description {
+        font-size: 13px;
+        margin-top: 8px;
+        padding: 0 5px;
+        text-align: center;
+    }
+}

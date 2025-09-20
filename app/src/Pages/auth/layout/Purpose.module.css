@@ -44,3 +44,40 @@
     border-radius: 15px;
     margin-top: 20px;
 }
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
+    .Purpose {
+        height: auto;
+        padding: 20px 10px;
+        height: 100vh;
+        gap: 16px;
+    }
+    .title {
+        font-size: 20px;
+        padding: 0 5px;
+        text-align: center;
+    }
+    .navLink {
+        width: 95vw;
+        min-width: 0;
+        max-width: 400px;
+        gap: 12px;
+    }
+    .navLink li {
+        height: 44px;
+        padding: 8px;
+        font-size: 15px;
+    }
+    .navLink li input {
+        width: 22px;
+        height: 22px;
+    }
+    .button {
+        width: 100%;
+        min-width: 120px;
+        max-width: 300px;
+        height: 38px;
+        font-size: 1rem;
+        margin-top: 16px;
+    }
+}

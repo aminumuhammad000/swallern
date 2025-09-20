@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import styles from "./Team.module.css";
 import profile from "../../../assets/images/profile.png";
 import aliyu from "../../../assets/images/aliyu.png";
+import ghali from "../../../assets/images/ghali.png";
+import salafi from "../../../assets/images/salafi.jpeg";
+import aisha from "../../../assets/images/aisha.png";
+import abubakar from "../../../assets/images/abubakar.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -31,7 +35,7 @@ const team: TeamMember[] = [
     },
   },
   {
-    profileImage: profile,
+    profileImage: aisha,
     name: "Aisha Muhammad Garba",
     position: "Project Manager",
     bio: "Strategic thinker who keeps the team aligned and focused. Expert in planning, coordination, and delivering projects on time.",
@@ -53,7 +57,7 @@ const team: TeamMember[] = [
     },
   },
   {
-    profileImage: profile,
+    profileImage: salafi,
     name: "Abdullahtif Yusuf",
     position: "Marketing Specialist",
     bio: "Creative storyteller driving Swallern’s brand voice. Passionate about connecting people to products that matter.",
@@ -75,18 +79,18 @@ const team: TeamMember[] = [
     },
   },
   {
-    profileImage: profile,
+    profileImage: ghali,
     name: "Ghali Sani Muhamad",
-    position: "Product / Brand Designer",
-    bio: "Designs with empathy and clarity, turning vision into visual identity. Crafts user-friendly interfaces and strong brand presence.",
+    position: "UI/UX Designer",
+    bio: "As the lead UI/UX Design team of the Swallern project, I design digital products with usability at their core, driven by a passion to make online skill learning intuitive and engaging. I am committed to using my design skills to improve user experiences and advance digital literacy.",
     social: {
       facebook: "https://facebook.com/ghali",
-      instagram: "https://instagram.com/ghali",
-      twitter: "https://twitter.com/ghali",
+      instagram: "https://www.instagram.com/ghali_na_mahamman/",
+      twitter: "https://x.com/ghali_s_/",
     },
   },
   {
-    profileImage: profile,
+    profileImage: abubakar,
     name: "Abubakar Ascap",
     position: "Social Media Manager",
     bio: "Drives engagement and builds communities around Swallern. Skilled at creating meaningful online conversations.",
