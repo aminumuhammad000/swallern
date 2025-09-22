@@ -6,6 +6,7 @@ import ghali from "../../../assets/images/ghali.png";
 import salafi from "../../../assets/images/salafi.jpeg";
 import aisha from "../../../assets/images/aisha.png";
 import abubakar from "../../../assets/images/abubakar.png";
+import usman from  "../../../assets/images/usman.png"
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -68,7 +69,7 @@ const team: TeamMember[] = [
     },
   },
   {
-    profileImage: profile,
+    profileImage: usman,
     name: "Usman Umar",
     position: "Marketing Specialist / Frontend Developer",
     bio: "Blends creativity and code to craft engaging experiences. Skilled in both outreach and design-focused frontend development.",
