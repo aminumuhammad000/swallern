@@ -7,6 +7,7 @@ import salafi from "../../../assets/images/salafi.jpeg";
 import aisha from "../../../assets/images/aisha.png";
 import abubakar from "../../../assets/images/abubakar.png";
 import usman from  "../../../assets/images/usman.png"
+import muste from "../../../assets/images/muste.png"
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -102,7 +103,7 @@ const team: TeamMember[] = [
     },
   },
   {
-    profileImage: profile,
+    profileImage: muste,
     name: "Mustapha Hussain",
     position: "Ui/UX Designer",
     bio: "Designs with empathy and clarity, turning vision into visual identity. Crafts user-friendly interfaces and strong brand presence.",
