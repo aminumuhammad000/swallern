@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import styles from "./Team.module.css";
 import profile from "../../../assets/images/profile.png";
 import aliyu from "../../../assets/images/aliyu.png";
@@ -114,17 +114,7 @@ const team: TeamMember[] = [
 ];
 
 export const Team = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Auto slide only on mobile
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (window.innerWidth <= 768) {
-        setCurrentIndex((prev) => (prev + 1) % team.length);
-      }
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  // ...existing code...
 
   return (
     <div className={styles.Team}>
