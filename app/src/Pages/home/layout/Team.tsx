@@ -1,6 +1,6 @@
 // import { useEffect, useState } from "react";
 import styles from "./Team.module.css";
-import profile from "../../../assets/images/profile.png";
+import aminu from "../../../assets/images/aminu.png";
 import aliyu from "../../../assets/images/aliyu.png";
 import ghali from "../../../assets/images/ghali.png";
 import salafi from "../../../assets/images/salafi.jpeg";
@@ -26,7 +26,7 @@ type TeamMember = {
 
 const team: TeamMember[] = [
   {
-    profileImage: profile,
+    profileImage: aminu,
     name: "Aminu Muhammad",
     position: "Founder / Fullstack Developer",
     bio: "Visionary, builder, and the heartbeat of Swallern’s mission. Leads product direction and development with passion and precision.",
@@ -60,7 +60,7 @@ const team: TeamMember[] = [
   },
   {
     profileImage: salafi,
-    name: "Abdullahtif Yusuf",
+    name: "Abdulateef Yusuf",
     position: "Marketing Specialist",
     bio: "Creative storyteller driving Swallern’s brand voice. Passionate about connecting people to products that matter.",
     social: {
@@ -93,7 +93,7 @@ const team: TeamMember[] = [
   },
   {
     profileImage: abubakar,
-    name: "Abubakar Ascap",
+    name: "Abubakar Hassan",
     position: "Social Media Manager",
     bio: "Drives engagement and builds communities around Swallern. Skilled at creating meaningful online conversations.",
     social: {
