@@ -1,8 +1,11 @@
 import style from "./Hero.module.css";
 import user from "../../../assets/images/user.png";
-import user2 from "../../../assets/images/user.png";
-import user3 from "../../../assets/images/profile.png"
+import aminu from "../../../assets/images/aminu.png";
+import aisha from "../../../assets/images/aisha.png"
 import aliyu from "../../../assets/images/aliyu.png"
+import usman from "../../../assets/images/usman.png"
+import abubakar from "../../../assets/images/abubakar.png";
+import mustapha from "../../../assets/images/muste.png"
 import StarIcon from "@mui/icons-material/Star";
 
 // import { use } from "react";
@@ -27,13 +30,13 @@ export const Hero = () => {
 
         <div className={style.testimonials}>
           <div className={style.imagesContainer}>
-            <img src={user3} alt="user profile" className={style.userImage} />
-            <img src={user2} alt="user profile" className={style.userImage} />
-            <img src={aliyu} alt="user profile" className={style.userImage} />
-            <img src={user3} alt="user profile" className={style.userImage} />
-            <img src={aliyu} alt="user profile" className={style.userImage} />
-            <img src={user3} alt="user profile" className={style.userImage} />
-            <button className={style.add}>+</button>
+            <img src={mustapha} alt="user profile" className={style.userImage} style={{zIndex: "10"}}/>
+            <img src={abubakar} alt="user profile" className={style.userImage} style={{zIndex: "9"}}/>
+            <img src={usman} alt="user profile" className={style.userImage} style={{zIndex: "8"}}/>
+            <img src={aisha} alt="user profile" className={style.userImage} style={{zIndex: "7"}}/>
+            <img src={aliyu} alt="user profile" className={style.userImage} style={{zIndex: "6"}}/>
+            <img src={aminu} alt="user profile" className={style.userImage} style={{zIndex: "5"}}/>
+            <button className={style.add} style={{zIndex: "10"}}>+</button>
           </div>
           <div>
             <p>

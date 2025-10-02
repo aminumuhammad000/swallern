@@ -1,0 +1,33 @@
+.explore-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .explore-sub {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .explore-sub h4 {
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+    .challenge, .community {
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+    .challenge i, .community i {
+      margin-right: 8px;
+    }
+    .challenge.orange { background: red; }
+    .challenge.blue { background: #5C7ECA; }
+    .challenge.green { background: #4CAF50; }
+    .community.red { background: #ff6b6b; }
+    .community.purple { background: #ff6b6b; }
+

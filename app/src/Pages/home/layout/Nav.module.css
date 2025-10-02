@@ -45,7 +45,7 @@ li.active{
   left: 0;
   width: 100%;
   height: 100vh;
-  background: coral;
+  background: #ff7f50f3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +71,7 @@ li.active{
   display: inline-block;
   margin-top: 2rem;
   background: white;
-  color: coral;
+  color: #ff7f50;
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: bold;

@@ -11,6 +11,13 @@ const Register = () => {
     <div className={styles.Register}>
       <h3>Sign Up or Guest Access</h3>
       <form action="" className={styles.form}>
+           <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Full Name"
+          required
+        />
         <input
           type="email"
           name="email"

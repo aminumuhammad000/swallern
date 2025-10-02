@@ -1,0 +1,163 @@
+.container{
+  display: flex;
+  height: 500px;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 20px;
+}
+.sectionHeader{
+  width: 320px;
+  border-right: 1px solid #222;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.sectionTitle{
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.categoryTitle{
+  font-size: 12px;
+  color: #222;
+  opacity: 0.7;
+}
+.description{
+  font-size: 12px;
+}
+.ChallengesContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 20px;
+}
+.challenge{
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-radius: 10px;
+  padding: 5px;
+}
+.icon{
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+}
+.details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.small{
+  font-size: 10px;
+}
+.seeMore{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  color: #5C7ECA;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* community container start here  */
+.CommunitiesContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px; 
+}
+.community{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  background-color: #ED673B;
+  color: #fff;
+  display: flex;
+   border-radius: 10px;
+  padding: 10px;
+}
+.small{
+  font-size: 10px;
+  opacity: 0.7;
+}
+.joinTeam{
+  background-color: #fff;
+  border-radius: 10px;
+  color: #222;
+  width: 40px;
+  padding: 5px;
+}
+.profile {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .profile img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 4px solid #fff;
+      outline: 1px solid var(--color-primary);
+    }
+    .name {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 5px 0;
+      text-align: center;
+    }
+    .skill {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .profile button {
+      background: var(--color-primary);
+      border: none;
+      color: #fff;
+      padding: 8px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .connections {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      font-size: 13px;
+      border-bottom: 1px solid #555;
+      padding-bottom: 10px;
+    }
+     .connections div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     }
+.cName{
+  opacity: 0.5;
+}
+.bio{
+  font-size: 12px;
+  color: #444;
+  margin-top: 15px;
+  text-align: center;
+  line-height: 1.4;
+}

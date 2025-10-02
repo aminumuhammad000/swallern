@@ -1,0 +1,17 @@
+    .main {
+      margin-left: 230px;
+      padding: 20px;
+      background-color: #FFF5F2;
+    }
+ 
+    .content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .left-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
