@@ -2,7 +2,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 230px;
+      width: 200px;
       height: 100vh;
       background: #ED673B;
       color: #fff;
@@ -42,4 +42,8 @@
     }
     .sidebar ul li:hover {
       background: rgba(255,255,255,0.1);
+    }
+    .Link{
+      text-decoration: none;
+      color: inherit;
     }

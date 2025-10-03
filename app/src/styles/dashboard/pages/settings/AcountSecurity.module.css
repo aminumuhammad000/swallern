@@ -1,0 +1,127 @@
+.Profile{
+    width: 100%;
+    margin-top: 20px;
+}
+.title{
+    font-size: 18px;
+}
+.mainContainer{
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 7px;
+    gap: 40px;
+}
+.side{
+    border-right: 1px solid #333;
+    width: 220px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.side ul{
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+}
+.side ul li{
+     width: 140px;
+     cursor: pointer;
+     font-size: 14px;
+}
+
+.side ul li.active{
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.mainTitle{
+   font-size: 16px;
+   font-weight: 500;
+}
+.profileCard{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.details{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.profileCard img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    outline: 1px solid var(--color-primary);
+    object-fit: cover;
+    background-color: var(--color-primary);
+}
+.name{
+    font-size: 16px;
+    font-weight: 500;
+}
+.username{
+    font-size: 14px;
+    opacity: 0.5;
+}
+.primary{
+    width: 70px;
+    height: 30px;
+    color: #fff;
+    background-color: #887df1;
+    border-radius: 10px;
+    border: none;
+}
+
+.personalInformation,
+.otherInformation{
+    width: 100%;
+    margin-top: 15px;
+     border: 1px solid #ddd;
+     padding: 20px;
+     border-radius: 20px;
+}
+.personalHead,
+.otherHead{
+    width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.personalHead h4,
+.otherHead h4{
+  font-size: 16px;
+  font-weight: 500;
+}
+table{
+    width: 100%;
+    table-layout: fixed;
+    margin-top: 10px;
+}
+td,
+.bio{
+    font-size: 14px;
+    padding: 10px 0px;
+    
+}
+td:not(td.value){
+    opacity: 0.7;
+}
+td.value{
+    color: #222;
+}

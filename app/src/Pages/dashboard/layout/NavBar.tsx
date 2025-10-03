@@ -10,6 +10,7 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -59,9 +60,11 @@ const NavBar = () => {
           <ArrowDropDownIcon />
           {open && (
             <div className={styles.dropdownMenu}>
+              <Link to="/dashboard/profile" className={styles.Link}>
               <div className={styles.dropdownItem}>
-                <AccountCircleIcon style={{ marginRight: "8px" }} /> Profile
+               <AccountCircleIcon style={{ marginRight: "8px" }} /> Profile
               </div>
+              </Link>
               <div className={styles.dropdownItem} style={{color: "red"}}>
                 <LogoutIcon style={{ marginRight: "8px", color: "red"}} /> Logout
               </div>

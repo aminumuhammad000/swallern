@@ -10,6 +10,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/auth" element={<Auth />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/profile" element={<Dashboard />} />
+        <Route path="/dashboard/courses" element={<Dashboard />} />
+        <Route path="/dashboard/community" element={<Dashboard />} />
+        <Route path="/dashboard/challenges" element={<Dashboard />} />
+        <Route path="/dashboard/leaderboard" element={<Dashboard />} />
+        <Route path="/dashboard/settings" element={<Dashboard />} />
+        <Route path="*/" element={<Dashboard />} />
         {/* <Route path="/admin/dashboard" element={<Contact />} /> */}
       </Routes>
     </div>

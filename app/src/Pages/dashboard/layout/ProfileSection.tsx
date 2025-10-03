@@ -2,11 +2,10 @@ import styles from "../../../styles/dashboard/layout/ProfileSection.module.css";
 const ProfileSection = () => {
   return (
     <div className={styles.container}>
-
         <div className={styles.sectionHeader}>
             <p className={styles.sectionTitle}>Explore</p>
             <p className={styles.categoryTitle}>Challenges</p>
-            <div className={styles.ChallengesContainer}>
+            <div className={styles.Challengescontainer}>
                 <div className={styles.challenge} style={{backgroundColor: "#ed673b9f"}}>
                     <h3 className={styles.icon} style={{backgroundColor: "#ed673b"}}>1</h3>
                     <div>
@@ -42,7 +41,7 @@ const ProfileSection = () => {
                 <p className={styles.seeMore}>Explore more </p>
             </div>
             <p className={styles.categoryTitle}>Communities</p>
-            <div className={styles.CommunitiesContainer}>
+            <div className={styles.Communitiescontainer}>
                 <div className={styles.community}>
                   <div>
                     <h5 className={styles.title}>Web Developers Hub</h5>

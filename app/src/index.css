@@ -86,3 +86,6 @@ button:hover {
   text-decoration: none;
   color: inherit;
 }
+#delete{
+    color: red;
+}
