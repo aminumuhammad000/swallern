@@ -1,0 +1,119 @@
+.Profile{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 20px;
+}
+.firstContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.mainTitle{
+   font-size: 16px;
+   font-weight: 500;
+}
+.circle{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEEEEE;
+    font-size: 34px;
+    border: 14px solid var(--color-primary);
+    border-left: none;
+}
+.Continue{
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    width: 170px;
+    height: 45px;
+    margin-top: 20px;
+}
+.progressContainer{
+    width: 400px;
+    display: flex;
+    flex-direction: column
+}
+.progress{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+.personalInformation,
+.otherInformation{
+    width: 100%;
+    margin-top: 40px;
+    border-radius: 20px;
+}
+.personalHead,
+.otherHead{
+    width: 100%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.personalHead h4,
+.otherHead h4{
+  font-size: 16px;
+  font-weight: 500;
+}
+.text,
+.description{
+    font-size: 12px;
+    color: #555;
+    margin-top: 5px;
+}
+.select{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    background-color: #fff;
+    color: #555;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 7px;
+    padding: 0px 15px;
+}
+.otherContainer{
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    /* align-items: center;     */
+}
+.personalHead{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    /* gap: 20px; */
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0px 10px;
+}
+.icon {
+  color: #6c63ff; /* or your primary theme color */
+  margin-right: 10px;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+

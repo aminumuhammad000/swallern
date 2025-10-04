@@ -1,0 +1,78 @@
+.Profile{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.historyNav{
+    display: flex;
+    gap: 20px;
+}
+.historyNav li{
+    list-style: none;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+.historyNav li.active{
+    color: #000;
+    font-weight: 600;
+    border-bottom: 2px solid #000;
+}
+
+.mainTitle{
+   font-size: 16px;
+   font-weight: 500;
+}
+.primary{
+    width: 70px;
+    height: 30px;
+    color: #fff;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+
+.personalInformation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.personalHead h4,
+.otherHead h4{
+  font-size: 16px;
+  font-weight: 500;
+}
+.description{
+    font-size: 12px;
+    color: #555;
+    margin-top: 5px;
+}
+.select{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    background-color: #fff;
+    color: #555;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 7px;
+    padding: 0px 15px;
+}
