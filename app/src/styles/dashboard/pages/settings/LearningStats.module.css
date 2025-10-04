@@ -28,10 +28,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #EEEEEE;
+    background-color: #EEEEEE;  
     font-size: 34px;
-    border: 14px solid var(--color-primary);
-    border-left: none;
+    /* border: 14px solid var(--color-primary); */
+    outline: 15px solid var(--color-primary);
 }
 .Continue{
     background-color: var(--color-primary);
@@ -49,9 +49,19 @@
 }
 .progress{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 10px;
     align-items: center;
     border: 1px solid #ddd;
+}
+.progress h4{
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.7;
+}
+.progress h3{
+    margin-right: 30px;
+    font-size: 16px;
 }
 .personalInformation,
 .otherInformation{
@@ -98,22 +108,36 @@
     flex-direction: column;
     gap: 10px;
     justify-content: center;
-    /* align-items: center;     */
+  
 }
 .personalHead{
     width: 100%;
-    height: 80px;
+    height: 60px;
     display: flex;
-    /* gap: 20px; */
+    justify-content: baseline;
     align-items: center;
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: 0px 10px;
+    gap: 10px;
 }
 .icon {
-  color: #6c63ff; /* or your primary theme color */
+  color: #6c63ff;
   margin-right: 10px;
   font-size: 24px;
-  flex-shrink: 0;
 }
-
+.buttonContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.small{
+    font-size: 12px;
+    opacity: 0.7;
+    font-weight: 500;
+}
+.name{
+    font-size: 16px;
+    font-weight: 500;
+}

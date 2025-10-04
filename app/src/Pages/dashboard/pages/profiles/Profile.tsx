@@ -20,37 +20,37 @@ const Profile = () => {
         <div className={styles.side}>
           <ul>
             <li
-              className={active === "profile" && styles.active}
+              className={active === "profile" ? styles.active : ""}
               onClick={() => handleClickNav("profile")}
             >
               My Profile
             </li>
             <li
-              className={active === "Security" && styles.active}
+              className={active === "Security" ? styles.active : ""}
               onClick={() => handleClickNav("Security")}
             >
               Security
             </li>
             <li
-              className={active === "notification" && styles.active}
+              className={active === "notification" ? styles.active : ""}
               onClick={() => handleClickNav("notification")}
             >
               Notification
             </li>
             <li
-              className={active === "history" && styles.active}
+              className={active === "history" ? styles.active : ""}
               onClick={() => handleClickNav("history")}
             >
               Activity History
             </li>
             <li
-              className={active === "stats" && styles.active}
+              className={active === "stats" ? styles.active : ""}
               onClick={() => handleClickNav("stats")}
             >
               Learning Stats
             </li>
             <li
-              className={active === "billing" && styles.active}
+              className={active === "billing" ? styles.active : ""}
               onClick={() => handleClickNav("billing")}
             >
               Billing
@@ -147,11 +147,12 @@ const Profile = () => {
 
 
          {active === "billing" && <>
-          <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia praesentium assumenda laudantium quam nostrum. Doloremque error, tempora voluptatem nobis quis aliquid ex repudiandae velit unde explicabo perferendis sapiente, non amet?</h1>
+
+          <p>Billing Details</p>
       </>}
 
           {active === "delete" && <>
-          <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia praesentium assumenda laudantium quam nostrum. Doloremque error, tempora voluptatem nobis quis aliquid ex repudiandae velit unde explicabo perferendis sapiente, non amet?</h1>
+            <p>Delete Page</p>
       </>}
       </div>
 

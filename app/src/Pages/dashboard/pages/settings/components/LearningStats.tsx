@@ -13,7 +13,7 @@ import TimelineIcon from "@mui/icons-material/Timeline"; // Activity
 const LearningStats = () => {
   return (
     <div className={styles.Profile}>
-      <h4 className={styles.mainTitle}>Learning Stats</h4>
+      <h5 className={styles.mainTitle}>Learning Stats</h5>
 
       <div className={styles.main}>
         <div className={styles.firstContainer}>
@@ -22,24 +22,24 @@ const LearningStats = () => {
           <button className={styles.Continue}>Continue Learning</button>
 
           <div className={styles.progressContainer}>
-            <div className={styles.progress}>
-              <h4>Courses in Progress</h4>
-              <h1>3</h1>
+            <div className={styles.progress} style={{borderRadius: "10px 10px 0px 0px"}}>
+              <h5>Courses in Progress</h5>
+              <h3>3</h3>
             </div>
 
             <div className={styles.progress}>
-              <h4>Courses Completed</h4>
-              <h1>7</h1>
+              <h5>Courses Completed</h5>
+              <h3>7</h3>
             </div>
 
             <div className={styles.progress}>
-              <h4>Total Hours</h4>
-              <h1>42</h1>
+              <h5>Total Hours</h5>
+              <h3>42</h3>
             </div>
 
-            <div className={styles.progress}>
-              <h4>Certificates Earned</h4>
-              <h1>2</h1>
+            <div className={styles.progress} style={{borderRadius: "0px 0px 10px 10px"}}>
+              <h5>Certificates Earned</h5>
+              <h3>2</h3>
             </div>
           </div>
         </div>
@@ -48,57 +48,57 @@ const LearningStats = () => {
           <p className={styles.text}>Your Learning Stats & Achievements</p>
 
           <div className={styles.personalHead}>
-            <div><EmojiEventsIcon className={styles.icon} /></div>
+            <EmojiEventsIcon className={styles.icon} style={{color: "#ed673b"}}/>
             <div className={styles.buttonContainer}>
-              <h4 className={styles.small}>Current Rank</h4>
+              <h5 className={styles.small}>Current Rank</h5>
               <h3 className={styles.name}>Golden Flight</h3>
             </div>
           </div>
 
           <div className={styles.personalHead}>
-            <div><StarIcon className={styles.icon} /></div>
+            <StarIcon className={styles.icon} style={{color: "gold"}}/>
             <div className={styles.buttonContainer}>
-              <h4 className={styles.small}>Total Points</h4>
+              <h5 className={styles.small}>Total Points</h5>
               <h3 className={styles.name}>1,240 XP</h3>
             </div>
           </div>
 
           <div className={styles.personalHead}>
-            <div><TrackChangesIcon className={styles.icon} /></div>
+            <TrackChangesIcon className={styles.icon} style={{color: "red"}}/>
             <div className={styles.buttonContainer}>
-              <h4 className={styles.small}>Goals Achieved</h4>
+              <h5 className={styles.small}>Goals Achieved</h5>
               <h3 className={styles.name}>5</h3>
             </div>
           </div>
 
           <div className={styles.personalHead}>
-            <div><MenuBookIcon className={styles.icon} /></div>
+            <MenuBookIcon className={styles.icon} style={{color: "#300dccff"}}/>
             <div className={styles.buttonContainer}>
-              <h4 className={styles.small}>Courses in Progress</h4>
+              <h5 className={styles.small}>Courses in Progress</h5>
               <h3 className={styles.name}>3</h3>
             </div>
           </div>
 
           <div className={styles.personalHead}>
-            <div><MilitaryTechIcon className={styles.icon} /></div>
+            <MilitaryTechIcon className={styles.icon} />
             <div className={styles.buttonContainer}>
-              <h4 className={styles.small}>Certificates</h4>
+              <h5 className={styles.small}>Certificates</h5>
               <h3 className={styles.name}>2 Completed</h3>
             </div>
           </div>
 
           <div className={styles.personalHead}>
-            <div><WorkspacePremiumIcon className={styles.icon} /></div>
+            <WorkspacePremiumIcon className={styles.icon} style={{color: "purple"}}/>
             <div className={styles.buttonContainer}>
-              <h4 className={styles.small}>Achievements</h4>
+              <h5 className={styles.small}>Achievements</h5>
               <h3 className={styles.name}>Top Learner</h3>
             </div>
           </div>
 
           <div className={styles.personalHead}>
-            <div><TimelineIcon className={styles.icon} /></div>
+            <TimelineIcon className={styles.icon} style={{color: "green"}}/>
             <div className={styles.buttonContainer}>
-              <h4 className={styles.small}>Learning Activity</h4>
+              <h5 className={styles.small}>Learning Activity</h5>
               <h3 className={styles.name}>High</h3>
             </div>
           </div>
