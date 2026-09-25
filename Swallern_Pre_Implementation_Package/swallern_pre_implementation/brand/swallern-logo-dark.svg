@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" role="img" aria-labelledby="title desc">
+<title id="title">Swallern logo</title><desc id="desc">Gradient stylized S symbol with Swallern wordmark</desc>
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#6366F1"/><stop offset="50%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#A855F7"/>
+  </linearGradient>
+</defs>
+<g transform="translate(20 18)">
+  <path d="M88 0c25 0 42 12 42 29 0 15-11 25-34 32l-28 8c-9 3-14 7-14 12 0 6 7 10 19 10h25c26 0 44 12 44 30 0 20-21 33-51 33H35c-16 0-27-8-27-19 0-10 10-18 25-18h48c10 0 16-3 16-8 0-4-5-7-14-7H56c-29 0-48-12-48-32 0-18 14-29 39-37l28-9c9-3 14-6 14-11 0-5-6-7-17-7H41C26 6 17 0 17-10c0-10 10-18 25-18h46z" fill="url(#g)" transform="skewY(-5)"/>
+  <path d="M123 3l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#FACC15"/>
+</g>
+<text x="185" y="120" font-family="Plus Jakarta Sans, Arial, sans-serif" font-size="82" font-weight="700" fill="#FFFFFF">Swallern</text>
+</svg>

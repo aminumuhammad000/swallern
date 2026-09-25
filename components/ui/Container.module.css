@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--layout-gutter-mobile);
+  padding-right: var(--layout-gutter-mobile);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: var(--layout-gutter-desktop);
+    padding-right: var(--layout-gutter-desktop);
+  }
+}
+
+.sizeDefault {
+  max-width: var(--layout-max-width);
+}
+
+.sizeNarrow {
+  max-width: var(--layout-content-width);
+}
+
+.sizeFull {
+  max-width: 100%;
+}

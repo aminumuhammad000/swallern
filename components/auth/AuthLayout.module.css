@@ -1,0 +1,132 @@
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
+
+.header {
+  padding: 24px 32px 0 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.brandLink {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.brandLink:hover {
+  opacity: 0.9;
+  transform: scale(0.99);
+}
+
+.brandLink:focus-visible {
+  outline: 2px solid #6366F1;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px 36px;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 32px 32px 36px;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+}
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.625rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #0F172A;
+  margin: 0 0 6px 0;
+}
+
+.subtitle {
+  font-size: 0.90625rem;
+  color: #64748B;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 22px 0;
+  text-align: center;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background-color: #E2E8F0;
+}
+
+.dividerText {
+  padding: 0 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer {
+  padding: 16px 20px 24px;
+  text-align: center;
+}
+
+.footerText {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  margin: 0;
+}
+
+.footerLink {
+  color: #64748B;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 150ms ease;
+}
+
+.footerLink:hover {
+  color: #0F172A;
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 16px 20px 0 20px;
+  }
+  .card {
+    padding: 24px 20px 28px;
+    border-radius: 16px;
+  }
+  .title {
+    font-size: 1.45rem;
+  }
+}

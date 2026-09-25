@@ -1,0 +1,28 @@
+{
+  "required": [
+    "slug",
+    "title",
+    "summary",
+    "category",
+    "quick_answer",
+    "key_concepts",
+    "explanation",
+    "sources",
+    "related_topics"
+  ],
+  "optional": [
+    "difficulty",
+    "media",
+    "lesson",
+    "quiz",
+    "last_reviewed_at"
+  ],
+  "source_requirements": {
+    "minimum_sources": 2,
+    "citation_required_for_material_claims": true
+  },
+  "quiz": {
+    "default_questions": 5,
+    "teach_with_explanations": true
+  }
+}
