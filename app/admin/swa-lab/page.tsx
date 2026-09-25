@@ -20,6 +20,7 @@ export default function SwaLabPage() {
   const [size, setSize] = useState<SwaSize>('large');
   const [float, setFloat] = useState(true);
   const [autoRotate, setAutoRotate] = useState(false);
+  const [showSkeletonHelper, setShowSkeletonHelper] = useState(false);
   const [playbackSpeed, setPlaybackSpeed] = useState(1.0);
   const [speech, setSpeech] = useState<string>('Hello! I am Swa v2, your learning companion.');
   const [showSpeech, setShowSpeech] = useState(true);
@@ -204,6 +205,7 @@ export default function SwaLabPage() {
             speech={showSpeech ? speech : null}
             float={float}
             autoRotate={autoRotate}
+            showSkeletonHelper={showSkeletonHelper}
             playbackSpeed={playbackSpeed}
             showSpeechOnMount={true}
             alt="Swa v2 Character"
@@ -256,6 +258,23 @@ export default function SwaLabPage() {
               }}
             >
               {autoRotate ? 'Rotating' : 'Auto Rotate'}
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setShowSkeletonHelper(!showSkeletonHelper)}
+              style={{
+                background: showSkeletonHelper ? '#0284C7' : '#F1F5F9',
+                color: showSkeletonHelper ? '#FFFFFF' : '#475569',
+                border: 'none',
+                padding: '4px 12px',
+                borderRadius: '999px',
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                cursor: 'pointer',
+              }}
+            >
+              {showSkeletonHelper ? '🦴 Skeleton Helper: ON' : '🦴 Skeleton Helper: OFF'}
             </button>
 
             <button

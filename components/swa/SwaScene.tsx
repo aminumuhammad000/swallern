@@ -17,6 +17,7 @@ interface SwaSceneProps {
   modelUrl?: string;
   cameraDistance?: number;
   cameraHeight?: number;
+  showSkeletonHelper?: boolean;
   onReactionComplete?: () => void;
   onLoaded?: () => void;
   onError?: (error: Error) => void;
@@ -33,6 +34,7 @@ export const SwaScene: React.FC<SwaSceneProps> = ({
   modelUrl,
   cameraDistance = 1.0,
   cameraHeight = 0.95,
+  showSkeletonHelper = false,
   onReactionComplete,
   onLoaded,
   onError,
@@ -153,6 +155,7 @@ export const SwaScene: React.FC<SwaSceneProps> = ({
 
     // 4. Model Loading & Instantiation
     let modelRoot: THREE.Group | null = null;
+    let skeletonHelper: THREE.SkeletonHelper | null = null;
 
     loadSwaModel(modelUrl)
       .then((data) => {
@@ -164,6 +167,12 @@ export const SwaScene: React.FC<SwaSceneProps> = ({
         modelRoot.position.set(0, 0, 0);
 
         scene.add(modelRoot);
+
+        // Optional Skeleton Wireframe Helper for live rig inspection
+        if (showSkeletonHelper) {
+          skeletonHelper = new THREE.SkeletonHelper(modelRoot);
+          scene.add(skeletonHelper);
+        }
 
         // Instantiate behavior controller with AnimationMixer & procedural motions
         const controller = new SwaController(modelRoot, data.animations);
@@ -221,6 +230,16 @@ export const SwaScene: React.FC<SwaSceneProps> = ({
 
       if (controllerRef.current) {
         controllerRef.current.dispose();
+      }
+
+      if (skeletonHelper) {
+        scene.remove(skeletonHelper);
+        skeletonHelper.geometry.dispose();
+        if (Array.isArray(skeletonHelper.material)) {
+          skeletonHelper.material.forEach((m) => m.dispose());
+        } else {
+          skeletonHelper.material.dispose();
+        }
       }
 
       if (container && renderer.domElement && container.contains(renderer.domElement)) {

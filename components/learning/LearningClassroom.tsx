@@ -313,6 +313,7 @@ export const LearningClassroom: React.FC<LearningClassroomProps> = ({
   const router = useRouter();
   const searchParams = useSearchParams();
   const isReviewRequested = searchParams.get('review') === 'true';
+  const hasExplicitStep = searchParams.has('step');
 
   /* ------------------------------------------------------------------ */
   /* Build structured step sequence                                       */
@@ -506,12 +507,18 @@ export const LearningClassroom: React.FC<LearningClassroomProps> = ({
           // Default to completion overview for completed courses
           setCurrentStepIndex(totalSteps - 1);
         }
-      } else if (initialStep === 0 && saved.currentStep > 0 && saved.currentStep < totalSteps) {
-        // In-progress: resume exact step!
+      } else if (!saved.isCompleted && hasExplicitStep && initialStep > (saved.currentStep || 0) && !saved.completedStepIndexes?.includes(initialStep)) {
+        // Enforce sequential learning: clamp to highest unlocked step
+        setCurrentStepIndex(saved.currentStep || 0);
+      } else if (hasExplicitStep) {
+        // Explicit step requested (e.g. reviewing step 0 or continuing step N)
+        setCurrentStepIndex(Math.min(totalSteps - 1, Math.max(0, initialStep)));
+      } else if (saved.currentStep > 0 && saved.currentStep < totalSteps) {
+        // In-progress with no explicit step: resume exact step!
         setCurrentStepIndex(saved.currentStep);
       }
     }
-  }, [topic.slug, initialStep, totalSteps, isReviewRequested]);
+  }, [topic.slug, initialStep, totalSteps, isReviewRequested, hasExplicitStep]);
 
   // Fetch note count for this topic
   useEffect(() => {

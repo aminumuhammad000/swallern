@@ -6,10 +6,6 @@ import { Header } from '@/components/layout/Header';
 import { SearchBar } from '@/components/search/SearchBar';
 import { getPublishedTopicBySlug } from '@/lib/content/topics';
 import { CourseJourney } from '@/components/journey/CourseJourney';
-import { SaveTopicButton } from '@/components/topic/SaveTopicButton';
-import { SourceList } from '@/components/topic/SourceList';
-import { MediaSection } from '@/components/topic/MediaSection';
-import { RelatedTopics } from '@/components/topic/RelatedTopics';
 import { TopicTracker } from '@/components/topic/TopicTracker';
 import { TopicJsonLd } from '@/components/topic/TopicJsonLd';
 
@@ -92,47 +88,14 @@ export default async function TopicPage({ params }: TopicPageProps) {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', background: '#F8FAFC' }}>
-      <Header />
+    <div style={{ minHeight: '100vh', background: '#F8FAFC' }}>
+      {/* Session tracker & structured data (silent server-side) */}
+      {topic.id && <TopicTracker topicId={topic.id} />}
+      <TopicJsonLd topic={topic} />
 
-      <main style={{ flex: 1, padding: 'var(--space-6) 0 var(--space-12) 0' }}>
-        <Container size="narrow">
-          {/* Session tracker & structured data (silent server-side) */}
-          {topic.id && <TopicTracker topicId={topic.id} />}
-          <TopicJsonLd topic={topic} />
-
-          {/* Breadcrumb + save */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-            <nav aria-label="Breadcrumb">
-              <Link
-                href="/explore"
-                style={{
-                  fontSize: '0.8125rem',
-                  fontWeight: 600,
-                  color: '#4F46E5',
-                  textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                }}
-              >
-                ← Back to Topic Library
-              </Link>
-            </nav>
-            {topic.id && <SaveTopicButton topicId={topic.id} topicSlug={topic.slug} />}
-          </div>
-
-          {/* ─── COURSE JOURNEY — main experience ─── */}
-          <CourseJourney topic={topic} />
-
-          {/* ─── Supporting content ─── */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '16px' }}>
-            <SourceList sources={topic.sources} />
-            <MediaSection media={topic.media} />
-            <RelatedTopics topics={topic.related_topics} />
-          </div>
-        </Container>
-      </main>
+      {/* ─── DEDICATED LEARNING JOURNEY APPLICATION SURFACE ─── */}
+      <CourseJourney topic={topic} />
     </div>
   );
 }
+

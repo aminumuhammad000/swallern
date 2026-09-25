@@ -29,31 +29,74 @@ export const SourceList: React.FC<SourceListProps> = ({ sources }) => {
       <h2 id="sources-heading" className={styles.heading}>
         Sources &amp; Verification
       </h2>
-      <ul className={styles.list}>
+      <ul
+        className={styles.list}
+        style={{
+          listStyle: 'none',
+          padding: 0,
+          margin: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '12px',
+        }}
+      >
         {sources.map((source, idx) => (
-          <li key={source.id || idx} className={styles.item}>
-            <svg
-              className={styles.icon}
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
+          <li
+            key={source.id || idx}
+            className={styles.item}
+            style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              gap: '12px',
+              padding: '14px 18px',
+              background: '#FFFFFF',
+              border: '1px solid #E2E8F0',
+              borderRadius: '16px',
+              boxShadow: '0 2px 8px rgba(15, 23, 42, 0.04)',
+              transition: 'transform 0.2s ease',
+            }}
+          >
+            <div
+              style={{
+                width: '32px',
+                height: '32px',
+                borderRadius: '10px',
+                background: '#EFF6FF',
+                color: '#3B82F6',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+              }}
             >
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-            </svg>
-            <div className={styles.content}>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+              </svg>
+            </div>
+            <div className={styles.content} style={{ flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
                 <a
                   href={source.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.link}
+                  style={{
+                    color: '#2563EB',
+                    fontWeight: 700,
+                    fontSize: '0.92rem',
+                    textDecoration: 'none',
+                  }}
                 >
                   {source.title} ↗
                 </a>
@@ -61,12 +104,12 @@ export const SourceList: React.FC<SourceListProps> = ({ sources }) => {
                   <span
                     style={{
                       fontSize: '0.68rem',
-                      padding: '0.1rem 0.4rem',
-                      borderRadius: '4px',
-                      background: '#eff6ff',
-                      color: '#1e40af',
-                      border: '1px solid #bfdbfe',
-                      fontWeight: 600,
+                      padding: '2px 8px',
+                      borderRadius: '999px',
+                      background: '#EFF6FF',
+                      color: '#1E40AF',
+                      border: '1px solid #BFDBFE',
+                      fontWeight: 700,
                       whiteSpace: 'nowrap',
                     }}
                     aria-label={`Source type: ${SOURCE_TYPE_LABELS[source.source_type] ?? source.source_type}`}
@@ -75,7 +118,7 @@ export const SourceList: React.FC<SourceListProps> = ({ sources }) => {
                   </span>
                 )}
               </div>
-              <span className={styles.meta}>
+              <span className={styles.meta} style={{ fontSize: '0.75rem', color: '#64748B', display: 'block', marginTop: '4px' }}>
                 {source.publisher && `${source.publisher}`}
                 {source.publisher && source.published_at && ` • `}
                 {source.published_at && `Published ${source.published_at}`}

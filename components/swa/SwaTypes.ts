@@ -199,6 +199,8 @@ export interface SwaProps {
   interactive?: boolean;
   /** Whether to slowly rotate around Y axis */
   autoRotate?: boolean;
+  /** Facing orientation: 1 for right (default), -1 for left */
+  facing?: 1 | -1;
   /** Animation playback speed multiplier (default 1.0) */
   playbackSpeed?: number;
   /** Custom model URL (defaults to /characters/swa/swa_v2.glb) */
@@ -215,6 +217,8 @@ export interface SwaProps {
   className?: string;
   /** Custom inline styles */
   style?: React.CSSProperties;
+  /** Whether to render an active THREE.SkeletonHelper wireframe overlay for rig inspection */
+  showSkeletonHelper?: boolean;
   /** Callback fired when 3D model finishes loading */
   onLoaded?: () => void;
   /** Callback fired if 3D model fails to load */

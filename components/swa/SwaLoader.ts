@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader, GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import * as SkeletonUtils from 'three/examples/jsm/utils/SkeletonUtils.js';
 
 export const SWA_MODEL_URL = '/characters/swa/swa_v2.glb';
 
@@ -32,7 +33,8 @@ export function isWebGLAvailable(): boolean {
 }
 
 /**
- * Loads and caches the canonical Swa GLB model (swa_v2.glb).
+ * Loads and caches the canonical Swa GLB model (swa_v2.glb / Meshy_AI_Twinklefin_All_Animations.glb).
+ * Sanitizes bone node names and animation track names so Three.js PropertyBinding binds all 28 joints.
  */
 export function loadSwaModel(url: string = SWA_MODEL_URL): Promise<SwaModelData> {
   const existing = cachedModelPromises.get(url);
@@ -47,6 +49,28 @@ export function loadSwaModel(url: string = SWA_MODEL_URL): Promise<SwaModelData>
       url,
       (gltf) => {
         const scene = gltf.scene;
+
+        // 1. Sanitize all bone and node names in the scene hierarchy (e.g. 'mixamorig:Hips' -> 'mixamorigHips')
+        // Three.js PropertyBinding splits on colons ':' as directory delimiters, which breaks track binding if not sanitized.
+        scene.traverse((child) => {
+          if (child.name && child.name.includes(':')) {
+            child.name = THREE.PropertyBinding.sanitizeNodeName(child.name);
+          }
+        });
+
+        // 2. Sanitize all animation clip tracks to match sanitized bone names
+        (gltf.animations || []).forEach((clip) => {
+          clip.tracks.forEach((track) => {
+            const dotIndex = track.name.lastIndexOf('.');
+            if (dotIndex !== -1) {
+              const nodePath = track.name.slice(0, dotIndex);
+              const propPath = track.name.slice(dotIndex);
+              if (nodePath.includes(':')) {
+                track.name = THREE.PropertyBinding.sanitizeNodeName(nodePath) + propPath;
+              }
+            }
+          });
+        });
 
         // Compute model bounds and center
         const box = new THREE.Box3().setFromObject(scene);
@@ -93,27 +117,9 @@ export function loadSwaModel(url: string = SWA_MODEL_URL): Promise<SwaModelData>
 }
 
 /**
- * Deep clones the Swa scene hierarchy while sharing geometries & textures.
- * This ensures independent transformations and animation mixers for each Swa instance.
+ * Clones the Swa scene hierarchy using Three.js SkeletonUtils.
+ * Ensures that SkinnedMeshes, Skeletons, and AnimationMixers are correctly associated.
  */
 export function cloneSwaScene(source: THREE.Group): THREE.Group {
-  const clone = source.clone(true);
-
-  // Map bones from source to clone
-  const clonedBones: Record<string, THREE.Bone> = {};
-  clone.traverse((child) => {
-    if (child instanceof THREE.Bone && child.name) {
-      clonedBones[child.name] = child;
-    }
-  });
-
-  // Re-bind cloned SkinnedMeshes to cloned bones
-  clone.traverse((child) => {
-    if (child instanceof THREE.SkinnedMesh && child.skeleton) {
-      const newBones = child.skeleton.bones.map((b) => clonedBones[b.name] || b);
-      child.bind(new THREE.Skeleton(newBones, child.skeleton.boneInverses), child.matrixWorld);
-    }
-  });
-
-  return clone;
+  return SkeletonUtils.clone(source) as THREE.Group;
 }

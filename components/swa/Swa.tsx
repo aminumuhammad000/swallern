@@ -24,7 +24,9 @@ export const Swa: React.FC<SwaProps> = ({
   float = true,
   interactive = false,
   autoRotate = false,
+  facing = 1,
   playbackSpeed = 1.0,
+  showSkeletonHelper = false,
   modelUrl,
   cameraDistance,
   cameraHeight,
@@ -157,86 +159,97 @@ export const Swa: React.FC<SwaProps> = ({
       )}
 
       {/* ─── 3D WEBGL ENGINE OR 2D FALLBACK ─── */}
-      {!isClient ? (
-        // SSR Placeholder (same size, prevents layout shift)
-        <div
-          style={{
-            width: '100%',
-            height: '100%',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%)',
-          }}
-        />
-      ) : !hasWebGL || loadState === 'error' ? (
-        // 2D Fallback if WebGL unavailable
-        <div
-          style={{
-            position: 'relative',
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Image
-            src={fallbackImage}
-            alt={alt}
-            width={pixelSize}
-            height={pixelSize}
-            priority
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          transform: facing === -1 ? 'scaleX(-1)' : undefined,
+          transformOrigin: 'center center',
+          transition: 'transform 0.25s ease',
+        }}
+      >
+        {!isClient ? (
+          // SSR Placeholder (same size, prevents layout shift)
+          <div
             style={{
-              objectFit: 'contain',
               width: '100%',
               height: '100%',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%)',
             }}
           />
-        </div>
-      ) : (
-        // Real 3D Swa Engine
-        <>
-          {/* Calm Loading Spinner Placeholder until 3D initializes */}
-          {loadState === 'loading' && (
-            <div
+        ) : !hasWebGL || loadState === 'error' ? (
+          // 2D Fallback if WebGL unavailable
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Image
+              src={fallbackImage}
+              alt={alt}
+              width={pixelSize}
+              height={pixelSize}
+              priority
               style={{
-                position: 'absolute',
-                inset: 0,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                zIndex: 1,
+                objectFit: 'contain',
+                width: '100%',
+                height: '100%',
               }}
-            >
+            />
+          </div>
+        ) : (
+          // Real 3D Swa Engine
+          <>
+            {/* Calm Loading Spinner Placeholder until 3D initializes */}
+            {loadState === 'loading' && (
               <div
                 style={{
-                  width: `${Math.round(pixelSize * 0.2)}px`,
-                  height: `${Math.round(pixelSize * 0.2)}px`,
-                  borderRadius: '50%',
-                  border: '2px solid rgba(13, 148, 136, 0.2)',
-                  borderTopColor: '#0D9488',
-                  animation: 'swallernRotate 1s linear infinite',
+                  position: 'absolute',
+                  inset: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  zIndex: 1,
                 }}
-              />
-            </div>
-          )}
+              >
+                <div
+                  style={{
+                    width: `${Math.round(pixelSize * 0.2)}px`,
+                    height: `${Math.round(pixelSize * 0.2)}px`,
+                    borderRadius: '50%',
+                    border: '2px solid rgba(13, 148, 136, 0.2)',
+                    borderTopColor: '#0D9488',
+                    animation: 'swallernRotate 1s linear infinite',
+                  }}
+                />
+              </div>
+            )}
 
-          <SwaScene
-            expression={expression}
-            animation={animation}
-            reaction={reaction}
-            float={float}
-            autoRotate={autoRotate}
-            reducedMotion={reducedMotion}
-            playbackSpeed={playbackSpeed}
-            modelUrl={modelUrl}
-            cameraDistance={cameraDistance}
-            cameraHeight={cameraHeight}
-            onReactionComplete={onReactionComplete}
-            onLoaded={handleLoaded}
-            onError={handleError}
-          />
-        </>
-      )}
+            <SwaScene
+              expression={expression}
+              animation={animation}
+              reaction={reaction}
+              float={float}
+              autoRotate={autoRotate}
+              reducedMotion={reducedMotion}
+              playbackSpeed={playbackSpeed}
+              showSkeletonHelper={showSkeletonHelper}
+              modelUrl={modelUrl}
+              cameraDistance={cameraDistance}
+              cameraHeight={cameraHeight}
+              onReactionComplete={onReactionComplete}
+              onLoaded={handleLoaded}
+              onError={handleError}
+            />
+          </>
+        )}
+      </div>
     </div>
   );
 };

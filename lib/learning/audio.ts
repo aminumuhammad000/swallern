@@ -51,6 +51,95 @@ export function getSpeechWordRange(
   };
 }
 
+/**
+ * Finds the highest quality England English (en-GB) female voice available in the client browser/OS.
+ * Prioritizes natural/neural British voices like Sonia, Libby, Serena, Google UK Female, etc.
+ */
+export function getBritishFemaleVoice(synth: SpeechSynthesis): SpeechSynthesisVoice | null {
+  const voices = synth.getVoices();
+  if (!voices || voices.length === 0) return null;
+
+  const isGB = (v: SpeechSynthesisVoice) => {
+    const lang = (v.lang || '').toLowerCase().replace('_', '-');
+    return lang === 'en-gb' || lang.startsWith('en-gb');
+  };
+
+  const isMale = (name: string) => {
+    const lower = name.toLowerCase();
+    return (
+      (lower.includes('male') && !lower.includes('female')) ||
+      lower.includes('george') ||
+      lower.includes('oliver') ||
+      lower.includes('ryan') ||
+      lower.includes('guy') ||
+      lower.includes('david') ||
+      lower.includes('daniel') ||
+      lower.includes('brian') ||
+      lower.includes('arthur')
+    );
+  };
+
+  const isKnownFemaleGB = (v: SpeechSynthesisVoice) => {
+    const name = v.name.toLowerCase();
+    return (
+      name.includes('female') ||
+      name.includes('sonia') ||
+      name.includes('libby') ||
+      name.includes('hazel') ||
+      name.includes('serena') ||
+      name.includes('stephanie') ||
+      name.includes('martha') ||
+      name.includes('kate') ||
+      name.includes('susan') ||
+      name.includes('victoria') ||
+      name.includes('fiona') ||
+      name.includes('alice')
+    );
+  };
+
+  // 1. Natural / Neural British English Female voice (e.g. Microsoft Sonia Online Natural, Google UK English Female)
+  const naturalGBFemale = voices.find(
+    (v) =>
+      isGB(v) &&
+      (v.name.toLowerCase().includes('natural') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('neural')) &&
+      isKnownFemaleGB(v)
+  );
+  if (naturalGBFemale) return naturalGBFemale;
+
+  // 2. Google UK English Female specifically
+  const googleUKFemale = voices.find(
+    (v) => isGB(v) && v.name.toLowerCase().includes('google') && !isMale(v.name)
+  );
+  if (googleUKFemale) return googleUKFemale;
+
+  // 3. Any known British English Female voice
+  const knownGBFemale = voices.find((v) => isGB(v) && isKnownFemaleGB(v));
+  if (knownGBFemale) return knownGBFemale;
+
+  // 4. Any British English voice that is not explicitly male
+  const anyNonMaleGB = voices.find((v) => isGB(v) && !isMale(v.name));
+  if (anyNonMaleGB) return anyNonMaleGB;
+
+  // 5. Any British English voice
+  const anyGB = voices.find((v) => isGB(v));
+  if (anyGB) return anyGB;
+
+  // 6. Fallback: High quality female English voice
+  const englishFemaleFallback = voices.find(
+    (v) =>
+      v.lang.toLowerCase().startsWith('en') &&
+      (v.name.toLowerCase().includes('female') ||
+        v.name.toLowerCase().includes('jenny') ||
+        v.name.toLowerCase().includes('samantha') ||
+        v.name.toLowerCase().includes('zira') ||
+        v.name.toLowerCase().includes('karen'))
+  );
+  if (englishFemaleFallback) return englishFemaleFallback;
+
+  // 7. General English fallback
+  return voices.find((v) => v.lang.toLowerCase().startsWith('en')) || null;
+}
+
 class SwallernAudioService {
   private chunks: string[] = [];
   private currentChunkIndex: number = -1;
@@ -188,15 +277,13 @@ class SwallernAudioService {
     const chunkText = this.chunks[index];
 
     const utterance = new SpeechSynthesisUtterance(chunkText);
-    utterance.rate = this.rate;
-    utterance.pitch = 1;
+    utterance.lang = 'en-GB';
+    utterance.rate = this.rate * 0.98;
+    utterance.pitch = 1.06; // warm, articulate female companion pitch
     utterance.volume = 1;
 
-    // Pick a natural English voice if available
-    const voices = synth.getVoices();
-    const preferredVoice = voices.find(
-      (v) => (v.lang.startsWith('en') && v.name.includes('Natural')) || v.name.includes('Google')
-    ) || voices.find((v) => v.lang.startsWith('en'));
+    // Pick highest quality England English female voice
+    const preferredVoice = getBritishFemaleVoice(synth);
     if (preferredVoice) {
       utterance.voice = preferredVoice;
     }

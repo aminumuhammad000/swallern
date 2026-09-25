@@ -563,6 +563,124 @@ p:last-child {
   animation: birdDialogueIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* ============================================================ */
+/* Swallern Learning Journey 2.0 — Motion & Keyframes           */
+/* ============================================================ */
+
+@keyframes journeyRadarPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes journeySpotlightPulse {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes journeySheetSlideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes journeyStarTwinkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.6));
+  }
+  50% {
+    transform: scale(1.12) rotate(15deg);
+    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.9));
+  }
+}
+
+@keyframes journeyTrackShimmer {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.journey-radar-ring {
+  animation: journeyRadarPulse 2.4s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+}
+
+.journey-radar-ring-delayed {
+  animation: journeyRadarPulse 2.4s cubic-bezier(0.2, 0.8, 0.4, 1) infinite 1.2s;
+}
+
+.journey-spotlight-beam {
+  animation: journeySpotlightPulse 3s ease-in-out infinite;
+}
+
+.journey-landmark-star {
+  animation: journeyStarTwinkle 3s ease-in-out infinite;
+}
+
+.journey-sheet-enter {
+  animation: journeySheetSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes journeyMenuPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.88) translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.journey-menu-pop {
+  animation: journeyMenuPop 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: top right;
+}
+
+/* Accessibility: Screen-reader only utility */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-radar-ring,
+  .journey-radar-ring-delayed,
+  .journey-spotlight-beam,
+  .journey-landmark-star,
+  .journey-sheet-enter {
+    animation: none !important;
+  }
+}
+
+
 
 /* ============================================================ */
 /* Swallern Learning Notes System — CSS                         */
